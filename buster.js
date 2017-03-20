@@ -24,9 +24,10 @@ const runBuster = () => {
     log('Running timer');
     if (hasPaywall()) {
       bust();
-    }
-    if (busted()) {
-      clearInterval(timer);
+
+      if (busted()) {
+        clearInterval(timer);
+      }
     }
   }, 1E3);
 }
